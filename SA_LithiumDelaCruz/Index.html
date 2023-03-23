@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="css/style.css">
+	<head>
+		<meta charset="utf-8">
+		<title>Index</title>
+		<style>
+			body {
+				font-family: "Lato", sans-serif;
+				background-image: url('../image/Landing Page.png');
+				background-repeat: no-repeat;
+				}
+
+			h2{
+				border: solid;
+				border-color: rgb(29, 51, 51);
+				border-width: 2px;
+				padding: 20px;
+				text-align: center;
+				background-color: darkslategray;
+				color: white;
+			}
+			.sidenav {
+				height: 100%;
+				width: 0;
+				position: fixed;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				background-color: rgba(43, 58, 58, 0.76);
+				overflow-x: hidden;
+				transition: 0.5s;
+				padding-top: 60px;
+				}
+
+			.sidenav a {
+				padding: 8px 8px 8px 32px;
+				text-decoration: none;
+				font-size: 25px;
+				color: #Ececec;
+				display: block;
+				transition: 0.3s;
+				}
+
+			.sidenav a:hover {
+				color: #f1f1f1;
+				background-color: rgba(43, 58, 58, 0.76);
+				}
+
+			.sidenav .closebtn {
+				position: absolute;
+				top: 0;
+				right: 25px;
+				font-size: 36px;
+				margin-left: 50px;
+				}
+
+			#main {
+				transition: margin-left .5s;
+				padding: 16px;
+				display: flex;
+				margin-top: 400px;
+				margin-left: 200px;
+				transform: scale(0.3);
+				}
+
+			@media screen and (max-height: 450px) {
+				.sidenav {padding-top: 15px;}
+				.sidenav a {font-size: 18px;}
+				}
+			
+		</style>
+	</head>
+	<body>
+		<span style="font-size:30px;cursor:pointer" onclick="openNav()"><h2> Tap Me To Access The Projects </h2></span>
+		<nav id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<a href="SA1_LithiumDelaCruz.html">SA1</a>
+				<a href="SA2_LithiumDelaCruz.html">SA2</a>
+				<a href="SA3_LithiumDelaCruz.html">SA3</a>	
+				<a href="SA4_LithiumDelaCruz.html">SA4</a>	
+				<a href="SA7_LithiumDelaCruz.html">SA7</a>	
+		</nav>
+		
+		<article id="main">
+			<div>
+			</div>
+		</article>
+
+		<script>
+			function openNav() {
+			  document.getElementById("mySidenav").style.width = "250px";
+			  document.getElementById("main").style.marginLeft = "250px";
+			}
+
+			function closeNav() {
+			  document.getElementById("mySidenav").style.width = "0";
+			  document.getElementById("main").style.marginLeft= "0";
+			}
+		</script>
+	</body>
+</html>

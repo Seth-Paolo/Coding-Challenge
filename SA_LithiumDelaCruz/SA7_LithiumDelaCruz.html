@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Numerology</title>
+		<meta charset="utf-8">  
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style>
+			body{
+				background: lightblue;
+				text-align: center;
+				font-family: arial;
+				color: navy;
+			}
+
+			button{
+				padding: 10px;
+				background: violet;
+			}
+
+			span{
+				font-size: 0.Sem;
+				color: maroon;
+			}
+		</style>
+	</head>
+	<body">
+		<h1>Your fortune is in your name</h1>
+		<h2>Your name is: <span id = "thename"> </span></h2>
+		<h2>Today's fortune: <span id = "fortune"></span></h2>
+
+		<button onclick = "nameFunction()"> Click here to enter your name </button>
+		<button onclick="window.open('Index.html')">Go To Home</button>
+
+		<script>
+			function nameFunction(){
+				var name = prompt("What is your full name?");
+				document.getElementById('thename').innerHTML = name;
+
+				var char = name.length;
+
+				while (char > 9){
+					var whole = 0;
+
+					for(var i = 0; i < char.toString().length; i++){
+						whole += parseInt(char.toString()[i]);
+					}
+
+					char = whole;
+					
+				}
+
+				console.log(char);
+
+				switch (char){
+					case 1:
+						document.getElementById('fortune').innerHTML = "You will have a bright day";
+						break;
+
+					case 2:
+						document.getElementById('fortune').innerHTML = "You will meet someone helpful";
+						break;
+
+					case 3:
+						document.getElementById('fortune').innerHTML = "Pop quiz for one subject. Make sure to study";
+						break;
+
+					case 4:
+						document.getElementById('fortune').innerHTML = "No class for the rest of the day";
+						break;
+
+					case 5:
+						document.getElementById('fortune').innerHTML = "Congrats on passing your quiz";
+						break;
+						
+					case 6:
+						document.getElementById('fortune').innerHTML = "It will soon rain";
+						break;
+					
+					case 7:
+						document.getElementById('fortune').innerHTML = "Check your notifications, someone texted you.";
+						break;
+
+					case 8:
+						document.getElementById('fortune').innerHTML = "You will have a productive day";
+						break;
+						
+					case 9:
+						document.getElementById('fortune').innerHTML = "You are tired, sleep or treat yourself for the day";
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>

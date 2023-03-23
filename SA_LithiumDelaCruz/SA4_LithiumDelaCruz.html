@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Car Deprecation Calculator</title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: lightblue; 
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Car Depreciation Calculator </h1>
+	<h2> Your Car Model: <span id="model"> </span></h2>
+    <h2> Car Cost: <span id="cost"> </span></h2>
+    <h2> Age of your Car: <span id="age"> </span></h2>
+    <h2> Good Condition?: <span id="condition"> </span></h2>
+    <h2> Your Car's Current Market Value <span id="currentvalue"> </span></h2>
+    
+    <button onclick="enterCar()"> Enter your Car information </button>
+    <button onclick="window.open('Index.html')">Go To Home</button>
+    <script>
+    	/* do not forget to place comments on the script */
+    	function enterCar() {
+        	carmodel = prompt("Enter Car Model");
+            carcost = prompt("Enter Cost of the Car");
+            carage = prompt("How old is your car?");
+            good = confirm("In Good Condition? Ok for Yes / Cancel for No");
+            document.getElementById('model').innerHTML = carmodel;
+            document.getElementById('cost').innerHTML = carcost;
+            document.getElementById('age').innerHTML = carage;
+            document.getElementById('condition').innerHTML = (good) ? "Yes" : "No";   
+            
+            computeMarketValue(parseFloat(carcost),parseFloat(carage),good);
+        }
+
+        function computeMarketValue(carcost, carage, good){
+            if(carage > 10){
+
+                if(good == false){
+                    let CMV = 70000;
+                    let finalCost = CMV * 0.9;
+                    document.getElementById('currentvalue').innerHTML = finalCost ;
+                }
+
+                else if(good == true){
+                    let CMV = 70000;
+                    let finalCost = CMV;
+                    document.getElementById('currentvalue').innerHTML = finalCost ;
+                }
+            }
+
+            else if(carage >= 8 && carage < 10){
+
+                if(good == false){
+                    let CMV = 10000;
+                    let finalCost = CMV * 0.9;
+                    document.getElementById('currentvalue').innerHTML = finalCost ;
+                }
+
+                else if(good == true){
+                    let CMV = 10000;
+                    let finalCost = CMV;
+                    document.getElementById('currentvalue').innerHTML = finalCost ;
+                }
+            }
+
+            else if(carage >= 5 && carage < 8){
+
+                if(good == false){
+                    let CMV = carcost * 0.25;
+                    let finalCost = CMV * 0.9;
+                    document.getElementById('currentvalue').innerHTML = finalCost ;
+                }
+
+                else if(good == true){
+                    let CMV = carcost * 0.25;
+                    let finalCost = CMV;
+                    document.getElementById('currentvalue').innerHTML = finalCost ;
+                }
+            }
+
+            else{
+
+                if(good == false){
+                    let CMV = carcost * 0.5;
+                    let finalCost = CMV * 0.9;
+                    document.getElementById('currentvalue').innerHTML = finalCost ;
+                }
+
+                else if(good == true){
+                    let CMV = carcost * 0.5;
+                    let finalCost = CMV;
+                    document.getElementById('currentvalue').innerHTML = finalCost ;
+                }
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
+

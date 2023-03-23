@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Toss coin</title>
+		<meta charset="utf-8">  
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        	body {background: navy; 
+            	text-align: center;
+            	font-family: arial;
+                color: white;
+            }
+            button {padding: 10px; background:violet }
+            span {color: yellow}
+            #coin, h5 {color: yellow; }
+            #coin { background: gray; 
+            	width: 25px; 
+                height: 25px;
+                padding: 25px;          
+                border: 5px dashed darkgray;
+                border-radius: 50%;
+                margin: 0 auto;
+                
+            }
+            
+        </style>
+
+	</head>
+	<body onload="getGuess()">
+        <h1> Heads or Tail? </h1>
+        <h2 onclick="getGuess()"> Click here to change your Guess: <span id="guess"> </span></h2>
+        <button onclick="window.open('Index.html')">Go To Home</button>
+        <h2 id="coin"> </h2>  
+        <h5> Click on the coin above to randomly change its face and compare with your guess </h5> 
+        
+        <script>
+            /* do not forget to include comments to this script */
+            function getGuess() {
+                let uGuess = prompt("Type H for head and T for tail");
+                uGuess = uGuess.toUpperCase(); // converting to an uppercase letter
+                document.getElementById('guess').innerHTML = uGuess;
+
+                // computers coin
+                let comCoin = (Math.random() * 2).toFixed(0);
+                if(comCoin == 1){
+                    comCoin = "H"
+                }
+
+                else{
+                    comCoin = "T"
+                }
+
+                document.getElementById('coin').innerHTML = comCoin;// Displays the coin face
+
+
+                // checks if wrong input
+                if ((uGuess === "H" && comCoin === "H") || (uGuess === "T" && comCoin === "T")){
+                    alert("You Guessed CORRECTLY");
+                }
+
+                else{
+                    alert("You Guessed INCORRECTLY");
+                }
+            }
+
+        </script>
+	</body>
+</html>
